@@ -1,3 +1,4 @@
+{{-- Untuk komponen alert --}}
 @props(['type' => 'info', 'message'])
 
 @php

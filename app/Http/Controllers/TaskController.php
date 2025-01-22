@@ -55,7 +55,7 @@ class TaskController extends Controller
 
         $task->update($request->all());
 
-        return redirect('/tasks')->with('success', 'Tugas berhasil diupdate!');
+        return redirect('/tasks')->with('success', 'Tugas berhasil diupdate!.');
     }
 
     public function destroy(Task $task)
@@ -63,7 +63,7 @@ class TaskController extends Controller
         $this->authorizeTask($task); // Pastikan hanya pemilik tugas yang bisa menghapus
         $task->delete();
 
-        return redirect('/tasks')->with('success', 'Tugas berhasil dihapus!');
+        return redirect('/tasks')->with('success', 'Tugas berhasil dihapus!.');
     }
 
     protected function authorizeTask(Task $task)

@@ -44,7 +44,7 @@ class AuthController extends Controller
             return redirect('/tasks');
         }
 
-        return back()->withErrors(['email' => 'Email tidak sesuai']);
+        return back()->withErrors(['email' => 'Email dan password tidak sesuai']);
     }
 
     public function logout()

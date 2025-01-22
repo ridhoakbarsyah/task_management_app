@@ -117,9 +117,9 @@
             });
         });
 
-        // Waktu timeout dalam milidetik (15 menit)
+        // Waktu timeout untuk logout otomatis
         const sessionTimeout = 15 * 60 * 1000;
-        const warningTime = 2 * 60 * 1000; // Waktu sebelum logout untuk menampilkan peringatan (2 menit)
+        const warningTime = 2 * 60 * 1000; // 2 menit sebelum logout
 
         let timeout;
         let warningTimeout;
@@ -128,7 +128,7 @@
             clearTimeout(timeout);
             clearTimeout(warningTimeout);
 
-            // Tampilkan peringatan 2 menit sebelum logout
+            // peringatan 2 menit sebelum logout
             warningTimeout = setTimeout(() => {
                 alert("Anda akan logout dalam 2 menit karena tidak ada aktivitas.");
             }, sessionTimeout - warningTime);
@@ -136,7 +136,7 @@
             // Logout otomatis setelah 15 menit
             timeout = setTimeout(() => {
                 alert("Anda telah logout karena tidak ada aktivitas.");
-                window.location.href = "{{ route('logout') }}"; // Ganti dengan route logout Anda
+                window.location.href = "{{ route('logout') }}";
             }, sessionTimeout);
         }
 

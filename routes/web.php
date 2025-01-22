@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/', function () {
-    return redirect()->route('login.form'); // Arahkan root ke halaman login
+    return redirect()->route('login.form'); // Halaman Login
 });
 
 Route::get('/register', [AuthController::class, 'registerForm'])->name('register.form');
@@ -22,7 +22,7 @@ Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])->name
 
 
 Route::middleware('auth')->group(function () {
-    // Rute untuk Task
+    // Rute untuk Tasks
     Route::get('/tasks', [TaskController::class, 'index'])->name('tasks.index');
     Route::get('/tasks/create', [TaskController::class, 'create'])->name('tasks.create');
     Route::post('/tasks', [TaskController::class, 'store'])->name('tasks.store');

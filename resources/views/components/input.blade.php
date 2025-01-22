@@ -1,3 +1,4 @@
+{{-- Untuk komponen input --}}
 @props(['label', 'type' => 'text', 'id', 'name', 'required' => false])
 
 <div>

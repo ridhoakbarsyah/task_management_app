@@ -16,7 +16,7 @@
         <div class="container mx-auto flex justify-between items-center">
             <a href="#" class="text-white text-2xl font-semibold">Daftar Tugas</a>
             <div class="flex items-center">
-                <!-- Sapaan Dinamis -->
+                <!-- Untuk sapaan -->
                 <span class="text-white text-lg mr-4" id="greeting"></span>
                 <form id="logout-form" action="/logout" method="POST">
                     @csrf
@@ -31,13 +31,13 @@
     <!-- Main Container -->
     <div class="container mx-auto mt-8 px-4">
 
-        <!-- Tambah Tugas Button -->
+        <!-- Button Tambah Tugas -->
         <a href="/tasks/create"
             class="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-md shadow-lg mb-4 inline-flex items-center">
             <i class="fas fa-plus mr-2"></i> Tambah Tugas
         </a>
 
-        <!-- Tabel Tugas -->
+        <!-- Menampilkan tabel Tugas yang sudah dibuat -->
         <div class="overflow-x-auto bg-white rounded-lg shadow-lg">
             <table class="min-w-full table-auto">
                 <thead class="bg-blue-500 text-white">
@@ -87,12 +87,12 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const greetingElement = document.getElementById('greeting');
-            const userName = '{{ auth()->user()->name }}'; // Mengambil nama pengguna dari Laravel
+            const userName = '{{ auth()->user()->name }}'; // untuk mengambil nama berdasar user login
 
             const currentHour = new Date().getHours();
             let greeting;
 
-            // Menentukan sapaan berdasarkan jam saat ini
+            // Menentukan sapaan berdasarkan waktu
             if (currentHour >= 5 && currentHour < 12) {
                 greeting = `Selamat Pagi, ${userName}`;
             } else if (currentHour >= 12 && currentHour < 18) {

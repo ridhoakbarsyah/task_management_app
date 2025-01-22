@@ -13,7 +13,7 @@ class Task extends Model
         'title',
         'description',
         'status',
-        'user_id', // Pastikan ini ada
+        'user_id',
     ];
 
     public function user()
